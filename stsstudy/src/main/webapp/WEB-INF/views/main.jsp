@@ -4,9 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<title>this is boardlistpage</title>
 </head>
 <body>
 
+	<div class="boardtable">
+		<table id="boardtable">
+
+		</table>
+	</div>
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+});
+</script>
 </html>
