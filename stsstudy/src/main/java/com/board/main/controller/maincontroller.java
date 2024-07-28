@@ -23,7 +23,9 @@ public class maincontroller {
 	private mainservice service;
 	
 	@GetMapping("/main")
-	public String mainpage() {
+	public String mainpage(Model model) {
+		List<boardentity> boardlist=brdrepo.findAll();
+		model.addAttribute("boardli", boardlist);
 		return "main";
 	}
 	@GetMapping("/searchtitle")
