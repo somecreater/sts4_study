@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages="com.board.domain")
 @EnableJpaRepositories(basePackages="com.board.repository")
-@ComponentScan(basePackages={"com.board.service","com.board.main.config"})
+@ComponentScan(basePackages={"com.board.service","com.board.main.config","com.board.main.controller"})
 public class StsstudyApplication {
 
 	public static void main(String[] args) {

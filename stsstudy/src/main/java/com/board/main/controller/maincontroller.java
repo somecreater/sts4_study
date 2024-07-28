@@ -24,7 +24,7 @@ public class maincontroller {
 	
 	@GetMapping("/main")
 	public String mainpage(Model model) {
-		List<boardentity> boardlist=brdrepo.findAll();
+		List<boardentity> boardlist=service.getboardlist();
 		model.addAttribute("boardli", boardlist);
 		return "main";
 	}
@@ -51,7 +51,7 @@ public class maincontroller {
 	@PostMapping("/board/writeaction")
 	public String writeboard(boardentity board) {
 		brdrepo.save(board);
-		return "redirect:board";
+		return "redirect:/main";
 	}
 	@GetMapping("/board/update/{num}")
 	public String update(@RequestParam Long num, Model model) {
@@ -62,7 +62,7 @@ public class maincontroller {
 	@PostMapping("/board/updateaction")
 	public String updateboard(boardentity board) {
 		brdrepo.save(board);
-		return "redirect:board";
+		return "redirect:/main";
 	}
 
 }
