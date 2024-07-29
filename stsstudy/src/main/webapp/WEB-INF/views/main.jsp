@@ -25,7 +25,7 @@
 			<c:forEach var="boardobject" items="${boardli}">
 				<tr>
 					<td>${boardobject.boardnum}</td>
-					<td><a href="/board/read/"+"{boardobject.boardnum}">${boardobject.title}</a></td>
+					<td><a href="/board/read?num=${boardobject.boardnum}">${boardobject.title}</a></td>
 					<td>${boardobject.writer}</td>
 					<td>${boardobject.registerday}</td>
 				</tr>

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<button id="writebackbtn">뒤로가기</button>
-	<div class="boardwriteobject">
+	<div id="boardwriteobject" >
 	<form action="/board/writeaction" method="post">
 		<input id="_csrf" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 		<textarea id="title" name="title" rows="1" cols="80" placeholder="제목을 쓰시오" style="resize: none;"></textarea>
@@ -28,6 +28,7 @@ $(document).ready(function(){
 	backbutton.on('click',function(){
 		window.location="/main";
 	});
+	
 	
 });
 </script>

@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
-.boardwriteobject{
-	
-}
+
 .boardtable {
     width: 80%;
     margin: 20px auto;
@@ -13,6 +11,12 @@
     overflow: hidden;
 }
 
+#boardreadobject{
+	
+}
+#boardwriteobject{
+	
+}
 #boardtable {
     width: 100%;
     border-collapse: collapse;

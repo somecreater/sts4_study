@@ -38,11 +38,11 @@ public class maincontroller {
 	public List<boardentity> searchBycontent(@RequestParam String content){
 		return service.content_searchboardlist(content);
 	}
-	@GetMapping("/board/read/{num}")
-	public String boardread(@RequestParam Long num, Model model) {
+	@GetMapping("/board/read")
+	public String boardread(@RequestParam("num") Long num, Model model) {
 		boardentity brd=brdrepo.findById(num).get();
 		model.addAttribute("board", brd);
-		return "board/read/"+num;
+		return "board/read";
 	}
 	@GetMapping("/board/write")
 	public String write() {
@@ -53,16 +53,20 @@ public class maincontroller {
 		brdrepo.save(board);
 		return "redirect:/main";
 	}
-	@GetMapping("/board/update/{num}")
-	public String update(@RequestParam Long num, Model model) {
+	@GetMapping("/board/update")
+	public String update(@RequestParam("num") Long num, Model model) {
 		boardentity brd=brdrepo.findById(num).get();
 		model.addAttribute("board", brd);
-		return "board/update/"+num;
+		return "board/update";
 	}
 	@PostMapping("/board/updateaction")
 	public String updateboard(boardentity board) {
 		brdrepo.save(board);
 		return "redirect:/main";
 	}
-
+	@PostMapping("/board/deleteaction")
+	public void deleteboard(@RequestParam("num") Long num) {
+		brdrepo.deleteById(num);
+	}
+	
 }
